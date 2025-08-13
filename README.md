@@ -68,11 +68,10 @@ sudo find storage bootstrap/cache -type d -exec chmod 775 {} \;
 sudo find storage bootstrap/cache -type f -exec chmod 664 {} \;
 ```
 
-### SQLite database file
+### permissions for SQLite
 ```bash
-* touch database/database.sqlite
-* sudo chown "$USER:$WEB_GROUP" database/database.sqlite
-* chmod 664 database/database.sqlite
+sudo chown "$USER:$WEB_GROUP" database/database.sqlite
+chmod 664 database/database.sqlite
 ```
 
 ### Run
@@ -80,3 +79,8 @@ sudo find storage bootstrap/cache -type f -exec chmod 664 {} \;
 * php artisan serve
 * npm run build
 ```
+
+### Login credentials:
+Login: ict@example.com
+
+Password: password
