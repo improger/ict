@@ -24,8 +24,7 @@ Note: This project uses SQLite by default to simplify installation and demo.
 ### Clone repository
 
 ```bash
-ssh: git clone git@github.com:improger/ict.git ict
-https: git clone https://github.com/improger/ict.git ict
+git clone https://github.com/improger/ict.git ict
 ```
 
 ### create .env file
