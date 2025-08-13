@@ -19,11 +19,9 @@ Note: This project uses SQLite by default to simplify installation and demo.
 * Pagination; Blade + Tailwind UI
 
 
-## Download repository:
-HTTPS: https://github.com/improger/ict.git
 
 
-### Clone
+### Clone repository
 
 ```bash
 ssh: git clone git@github.com:improger/ict.git ict
