@@ -12,7 +12,7 @@ Note: This project uses SQLite by default to simplify installation and demo.
 
 * Categories with Many-to-Many relation
 
-* Keyword search on post title & body (?q=) + category filter (?category=slug)
+* Keyword search on post title & body
 
 * Form Request validation; sanitized output to mitigate XSS
 
