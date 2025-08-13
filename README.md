@@ -20,45 +20,63 @@ Note: This project uses SQLite by default to simplify installation and demo.
 
 
 ## Download repository:
-SSH: git@github.com:improger/ict.git
-
 HTTPS: https://github.com/improger/ict.git
 
 
 ### Clone
 
+```bash
 ssh: git clone git@github.com:improger/ict.git ict
-
 https: git clone https://github.com/improger/ict.git ict
+```
 
+### create .env file
+```bash
 cd ict
-
 cp .env.example .env
+```
+
 
 ### Install
-* composer install
-* php artisan key:generate
-* php artisan migrate --seed
-* npm install
+```bash
+composer install
+php artisan key:generate
+npm install
+```
 
 ### create the SQLite database file
-* touch database/database.sqlite
+```bash
+touch database/database.sqlite
+```
+
+### create database tables with seeders
+```bash
+php artisan migrate --seed
+```
 
 ### choose your web server group: www-data (Ubuntu/Debian), _www (macOS)
 * WEB_GROUP=www-data
 
 ### give your user and the web group ownership
-* sudo chown -R "$USER:$WEB_GROUP" storage bootstrap/cache database
+```bash
+sudo chown -R "$USER:$WEB_GROUP" storage bootstrap/cache database
+````
 
 ### make dirs/files group-writable (no 777)
-* sudo find storage bootstrap/cache -type d -exec chmod 775 {} \;
-* sudo find storage bootstrap/cache -type f -exec chmod 664 {} \;
+```bash
+sudo find storage bootstrap/cache -type d -exec chmod 775 {} \;
+sudo find storage bootstrap/cache -type f -exec chmod 664 {} \;
+```
 
 ### SQLite database file
+```bash
 * touch database/database.sqlite
 * sudo chown "$USER:$WEB_GROUP" database/database.sqlite
 * chmod 664 database/database.sqlite
+```
 
 ### Run
+```bash
 * php artisan serve
 * npm run build
+```
