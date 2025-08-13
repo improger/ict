@@ -73,8 +73,8 @@ chmod 664 database/database.sqlite
 
 ### Run
 ```bash
-* php artisan serve
-* npm run build
+php artisan serve
+npm run build
 ```
 
 ### Login credentials:
