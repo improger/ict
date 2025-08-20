@@ -46,21 +46,20 @@ jobs:
           php artisan key:generate
           mkdir -p storage bootstrap/cache database
           chmod -R 775 storage bootstrap/cache
-
           if grep -q "DB_CONNECTION=sqlite" .env; then
-            if [ ! -f database/database.sqlite ]; then
-              echo ">>> Creating new SQLite database"
-              touch database/database.sqlite
-            else
-              echo ">>> SQLite database already exists, keeping it"
-            fi
+            touch database/database.sqlite
           fi
 
       - name: Run migrations and seed
         run: php artisan migrate:fresh --seed --force
 
+      - name: Azure Login
+        uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+
       - name: Deploy to Azure WebApp
         uses: azure/webapps-deploy@v2
         with:
-          app-name: ictblogapp
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE }}
+          app-name: ${{ secrets.AZURE_WEBAPP_NAME }}
+          package: .
